@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CityExplorer.ViewModels"
+             xmlns:models="clr-namespace:CityExplorer.Models"
+             xmlns:strings="clr-namespace:CityExplorer.Resources.Strings"
+             x:Class="CityExplorer.Views.ExplorePage"
+             BackgroundColor="#0B1220">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="10">
+
+        <!-- CATEGORY BAR -->
+        <ScrollView Orientation="Horizontal" Grid.Row="0" Margin="0,8">
+            <HorizontalStackLayout Spacing="10">
+
+                <Button Text="{Binding [AllCategories], Source={x:Static strings:LocalizationResourceManager.Instance}}"
+                        Command="{Binding FilterCommand}"
+                        CommandParameter="All"
+                        BackgroundColor="#6366F1"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="20"
+                        Padding="16,8"/>
+
+                <Button Text="🌳"
+                        Command="{Binding FilterCommand}"
+                        CommandParameter="🌳"
+                        BackgroundColor="#1F2937"
+                        TextColor="#34D399"
+                        CornerRadius="18"/>
+
+                <Button Text="🍽️"
+                        Command="{Binding FilterCommand}"
+                        CommandParameter="🍽️"
+                        BackgroundColor="#1F2937"
+                        TextColor="#FBBF24"
+                        CornerRadius="18"/>
+
+                <Button Text="🏰"
+                        Command="{Binding FilterCommand}"
+                        CommandParameter="🏰"
+                        BackgroundColor="#1F2937"
+                        TextColor="#60A5FA"
+                        CornerRadius="18"/>
+
+            </HorizontalStackLayout>
+        </ScrollView>
+
+        <!-- CAROUSEL -->
+        <CarouselView x:Name="carousel"
+                      Grid.Row="1"
+                      ItemsSource="{Binding FilteredAttractions}"
+                      Loop="True"
+                      PeekAreaInsets="40"
+                      IndicatorView="indicator">
+
+            <CarouselView.ItemTemplate>
+
+                <DataTemplate x:DataType="models:Attraction">
+
+                    <Frame Margin="12"
+                           CornerRadius="28"
+                           HasShadow="True"
+                           Padding="0"
+                           BackgroundColor="#111827">
+
+                        <Frame.Shadow>
+                            <Shadow Brush="Black"
+                                    Opacity="0.4"
+                                    Radius="20"
+                                    Offset="0,10"/>
+                        </Frame.Shadow>
+
+                        <VerticalStackLayout>
+
+                            <Image Source="{Binding ImageUrl}"
+                                   HeightRequest="280"
+                                   Aspect="AspectFill"/>
+
+                            <VerticalStackLayout Padding="16" Spacing="8">
+
+                                <Label Text="{Binding Name}"
+                                       FontSize="22"
+                                       FontAttributes="Bold"
+                                       HorizontalOptions="Center"
+                                       TextColor="White"/>
+
+                                <Label Text="{Binding Category}"
+                                       Opacity="0.7"
+                                       HorizontalOptions="Center"
+                                       TextColor="#9CA3AF"/>
+
+                                <Label Text="{Binding Description}"
+                                       FontSize="14"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="#D1D5DB"/>
+
+                                <Button Text="{Binding [AddToFavorites], Source={x:Static strings:LocalizationResourceManager.Instance}}"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type vm:ExploreViewModel}}, Path=AddToFavoritesCommand}"
+                                        CommandParameter="{Binding .}"
+                                        BackgroundColor="#6366F1"
+                                        TextColor="White"
+                                        CornerRadius="14"
+                                        FontAttributes="Bold"/>
+
+                            </VerticalStackLayout>
+
+                        </VerticalStackLayout>
+
+                    </Frame>
+
+                </DataTemplate>
+
+            </CarouselView.ItemTemplate>
+
+        </CarouselView>
+
+        <!-- INDICATOR -->
+        <IndicatorView x:Name="indicator"
+                       Grid.Row="2"
+                       HorizontalOptions="Center"
+                       IndicatorColor="#374151"
+                       SelectedIndicatorColor="#6366F1"
+                       IndicatorSize="8"/>
+
+    </Grid>
+</ContentPage>

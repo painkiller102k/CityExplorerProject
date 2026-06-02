@@ -1,0 +1,114 @@
+<root>
+
+	<!-- NAV / TABS -->
+	<data name="ExploreTitle">
+		<value>Avasta</value>
+	</data>
+	<data name="FavoritesTitle">
+		<value>Lemmikud</value>
+	</data>
+	<data name="SettingsTitle">
+		<value>Seaded</value>
+	</data>
+
+	<!-- UI -->
+	<data name="AllCategories">
+		<value>Kõik</value>
+	</data>
+	<data name="AddToFavorites">
+		<value>Lisa lemmikutesse</value>
+	</data>
+	<data name="Remove">
+		<value>Eemalda</value>
+	</data>
+	<data name="SelectLanguage">
+		<value>Vali keel</value>
+	</data>
+
+	<!-- FAVORITES -->
+	<data name="NoFavorites">
+		<value>Lemmikuid pole</value>
+	</data>
+	<data name="FavoritesEmpty">
+		<value>Lemmikuid pole</value>
+	</data>
+
+	<!-- ACTIONS -->
+	<data name="Delete">
+		<value>Kustuta</value>
+	</data>
+	<data name="Success">
+		<value>Õnnestus</value>
+	</data>
+	<data name="AlreadyAdded">
+		<value>Juba lisatud</value>
+	</data>
+
+	<!-- CATEGORIES -->
+	<data name="CategoryNature">
+		<value>Loodus</value>
+	</data>
+	<data name="CategoryFood">
+		<value>Söök</value>
+	</data>
+	<data name="CategoryHistory">
+		<value>Ajalugu</value>
+	</data>
+
+	<!-- CAROUSEL -->
+	<data name="Attraction1_Name">
+		<value>Kadrioru park</value>
+	</data>
+	<data name="Attraction1_Desc">
+		<value>Ilus park ja loss Tallinna südames.</value>
+	</data>
+
+	<data name="Attraction2_Name">
+		<value>Pae park</value>
+	</data>
+	<data name="Attraction2_Desc">
+		<value>Rahulik jalutamise koht.</value>
+	</data>
+
+	<data name="Attraction3_Name">
+		<value>NOA Restoran</value>
+	</data>
+	<data name="Attraction3_Desc">
+		<value>Moodne restoran merevaatega.</value>
+	</data>
+
+	<data name="Attraction4_Name">
+		<value>Mere Restoran</value>
+	</data>
+	<data name="Attraction4_Desc">
+		<value>Hubane restoran kesklinnas.</value>
+	</data>
+
+	<data name="Attraction5_Name">
+		<value>Raekoja plats</value>
+	</data>
+	<data name="Attraction5_Desc">
+		<value>Vanalinna süda.</value>
+	</data>
+
+	<data name="Attraction6_Name">
+		<value>Pirita klooster</value>
+	</data>
+	<data name="Attraction6_Desc">
+		<value>Ajalooline klooster Pirital.</value>
+	</data>
+
+	<data name="Success">
+		<value>Edukas</value>
+	</data>
+	<data name="AddedToFavorites">
+		<value>Lisatud lemmikutesse</value>
+	</data>
+	<data name="AlreadyAdded">
+		<value>Juba lisatud</value>
+	</data>
+	<data name="OK">
+		<value>OK</value>
+	</data>
+	
+</root>

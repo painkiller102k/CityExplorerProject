@@ -1,0 +1,114 @@
+<root>
+
+	<!-- NAV / TABS -->
+	<data name="ExploreTitle">
+		<value>Explore</value>
+	</data>
+	<data name="FavoritesTitle">
+		<value>Favorites</value>
+	</data>
+	<data name="SettingsTitle">
+		<value>Settings</value>
+	</data>
+
+	<!-- UI -->
+	<data name="AllCategories">
+		<value>All</value>
+	</data>
+	<data name="AddToFavorites">
+		<value>Add to favorites</value>
+	</data>
+	<data name="Remove">
+		<value>Remove</value>
+	</data>
+	<data name="SelectLanguage">
+		<value>Select language</value>
+	</data>
+
+	<!-- FAVORITES -->
+	<data name="NoFavorites">
+		<value>No favorites yet</value>
+	</data>
+	<data name="FavoritesEmpty">
+		<value>No favorites yet</value>
+	</data>
+
+	<!-- ACTIONS -->
+	<data name="Delete">
+		<value>Delete</value>
+	</data>
+	<data name="Success">
+		<value>Success</value>
+	</data>
+	<data name="AlreadyAdded">
+		<value>Already added</value>
+	</data>
+
+	<!-- CATEGORIES -->
+	<data name="CategoryNature">
+		<value>Nature</value>
+	</data>
+	<data name="CategoryFood">
+		<value>Food</value>
+	</data>
+	<data name="CategoryHistory">
+		<value>History</value>
+	</data>
+
+	<!-- CAROUSEL -->
+	<data name="Attraction1_Name">
+		<value>Kadriorg Park</value>
+	</data>
+	<data name="Attraction1_Desc">
+		<value>Beautiful park and palace in Tallinn.</value>
+	</data>
+
+	<data name="Attraction2_Name">
+		<value>Pae Park</value>
+	</data>
+	<data name="Attraction2_Desc">
+		<value>Peaceful walking and relaxation area.</value>
+	</data>
+
+	<data name="Attraction3_Name">
+		<value>NOA Restaurant</value>
+	</data>
+	<data name="Attraction3_Desc">
+		<value>Modern restaurant with sea view.</value>
+	</data>
+
+	<data name="Attraction4_Name">
+		<value>Mere Restaurant</value>
+	</data>
+	<data name="Attraction4_Desc">
+		<value>Cozy restaurant in city center.</value>
+	</data>
+
+	<data name="Attraction5_Name">
+		<value>Town Hall Square</value>
+	</data>
+	<data name="Attraction5_Desc">
+		<value>Heart of the Old Town.</value>
+	</data>
+
+	<data name="Attraction6_Name">
+		<value>Pirita Monastery</value>
+	</data>
+	<data name="Attraction6_Desc">
+		<value>Historic monastery in Pirita.</value>
+	</data>
+
+	<data name="Success">
+		<value>Success</value>
+	</data>
+	<data name="AddedToFavorites">
+		<value>Added to favorites</value>
+	</data>
+	<data name="AlreadyAdded">
+		<value>Already added</value>
+	</data>
+	<data name="OK">
+		<value>OK</value>
+	</data>
+
+</root>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:CityExplorer.ViewModels"
+             xmlns:models="clr-namespace:CityExplorer.Models"
+             xmlns:strings="clr-namespace:CityExplorer.Resources.Strings"
+             x:Class="CityExplorer.Views.FavoritesPage"
+             BackgroundColor="#0B1220"
+             Title="{Binding [FavoritesTitle], Source={x:Static strings:LocalizationResourceManager.Instance}}">
+
+    <RefreshView Command="{Binding RefreshCommand}"
+                 IsRefreshing="{Binding IsBusy}">
+
+        <CollectionView ItemsSource="{Binding Favorites}"
+                        Margin="10">
+
+            <CollectionView.EmptyView>
+                <VerticalStackLayout HorizontalOptions="Center"
+                                     VerticalOptions="Center">
+                    <Label Text="💔 No favorites yet"
+                           FontSize="18"
+                           TextColor="#9CA3AF"
+                           HorizontalOptions="Center"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:FavoriteAttraction">
+
+                    <Frame Margin="8"
+                           Padding="12"
+                           CornerRadius="18"
+                           HasShadow="True"
+                           BackgroundColor="#111827">
+
+                        <Grid ColumnDefinitions="Auto,*,Auto"
+                              ColumnSpacing="12">
+
+                            <Image Source="{Binding ImageUrl}"
+                                   WidthRequest="70"
+                                   HeightRequest="70"
+                                   Aspect="AspectFill"/>
+
+                            <VerticalStackLayout Grid.Column="1"
+                                                 VerticalOptions="Center">
+
+                                <Label Text="{Binding Name}"
+                                       FontAttributes="Bold"
+                                       FontSize="16"
+                                       TextColor="White"/>
+
+                                <Label Text="{Binding Category}"
+                                       FontSize="13"
+                                       TextColor="#9CA3AF"/>
+
+                            </VerticalStackLayout>
+
+                            <Button Grid.Column="2"
+                                    Text="{Binding [Remove], Source={x:Static strings:LocalizationResourceManager.Instance}}"
+                                    BackgroundColor="#EF4444"
+                                    TextColor="White"
+                                    CornerRadius="12"
+                                    FontAttributes="Bold"
+                                    Padding="12,6"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:FavoritesViewModel}}, Path=RemoveFavoriteCommand}"
+                                    CommandParameter="{Binding .}"/>
+
+                        </Grid>
+
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </RefreshView>
+
+</ContentPage>
