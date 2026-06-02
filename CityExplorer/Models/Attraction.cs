@@ -1,29 +1,18 @@
-﻿using System.ComponentModel;
-using CityExplorer.Resources.Strings;
+﻿using CityExplorer.Resources.Strings;
 
 namespace CityExplorer.Models;
 
-public class Attraction : INotifyPropertyChanged
+public class Attraction
 {
     public int Id { get; set; }
 
-    public string NameKey { get; set; } = "";
-    public string DescriptionKey { get; set; } = "";
+    public string NameKey { get; set; } = string.Empty;
+    public string DescriptionKey { get; set; } = string.Empty;
 
-    public string ImageUrl { get; set; } = "";
-    public string Category { get; set; } = "";
+    public string Category { get; set; } = string.Empty;
+    public string ImageUrl { get; set; } = string.Empty;
 
-    public string Name =>
-        LocalizationResourceManager.Instance[NameKey];
+    public string Name => LocalizationResourceManager.Instance[NameKey];
 
-    public string Description =>
-        LocalizationResourceManager.Instance[DescriptionKey];
-
-    public event PropertyChangedEventHandler? PropertyChanged;
-
-    public void NotifyLanguageChanged()
-    {
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Name)));
-        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Description)));
-    }
+    public string Description => LocalizationResourceManager.Instance[DescriptionKey];
 }
