@@ -9,7 +9,6 @@ public class FavoriteAttraction
 
     public int AttractionId { get; set; }
 
-    // ❗ обычные поля (НЕ readonly, НЕ computed)
     public string Name { get; set; } = "";
     public string Description { get; set; } = "";
 

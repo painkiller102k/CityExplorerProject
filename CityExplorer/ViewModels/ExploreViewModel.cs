@@ -8,14 +8,14 @@ namespace CityExplorer.ViewModels;
 
 public class ExploreViewModel : BaseViewModel
 {
-    private readonly DatabaseService _databaseService;
+    private readonly DatabaseService _databaseService; // db
 
-    public ObservableCollection<Attraction> AllAttractions { get; set; } = new();
-    public ObservableCollection<Attraction> FilteredAttractions { get; set; } = new();
+    public ObservableCollection<Attraction> AllAttractions { get; set; } = new(); // kõik 
+    public ObservableCollection<Attraction> FilteredAttractions { get; set; } = new(); // filter
 
     private string _selectedCategory = "All";
 
-    public ICommand FilterCommand { get; }
+    public ICommand FilterCommand { get; } // filter
     public ICommand AddToFavoritesCommand { get; }
 
     public string SelectedCategory
@@ -42,7 +42,6 @@ public class ExploreViewModel : BaseViewModel
         LoadData();
         Filter();
 
-        // 🔥 ВАЖНО: при смене языка ПЕРЕСОЗДАЁМ список
         LocalizationResourceManager.Instance.PropertyChanged += (_, __) =>
         {
             Filter();
@@ -108,8 +107,7 @@ public class ExploreViewModel : BaseViewModel
 
     private void Filter()
     {
-        // 🔥 ВАЖНО: пересоздаём коллекцию полностью
-        var filtered = new ObservableCollection<Attraction>();
+        var filtered = new ObservableCollection<Attraction>(); // new spisok
 
         foreach (var item in AllAttractions)
         {
@@ -129,7 +127,7 @@ public class ExploreViewModel : BaseViewModel
 
         if (exists != null)
         {
-            await App.Current!.Windows[0].Page!.DisplayAlert(
+            await App.Current!.Windows[0].Page!.DisplayAlertAsync(
                 LocalizationResourceManager.Instance["FavoritesTitle"],
                 LocalizationResourceManager.Instance["AlreadyAdded"],
                 LocalizationResourceManager.Instance["OK"]);
@@ -145,7 +143,7 @@ public class ExploreViewModel : BaseViewModel
             ImageUrl = a.ImageUrl
         });
 
-        await App.Current!.Windows[0].Page!.DisplayAlert(
+        await App.Current!.Windows[0].Page!.DisplayAlertAsync(
             LocalizationResourceManager.Instance["Success"],
             LocalizationResourceManager.Instance["AddedToFavorites"],
             LocalizationResourceManager.Instance["OK"]);
